@@ -71,8 +71,8 @@ export default function HomePage() {
   return (
     <main className="min-h-dvh bg-white text-gray-900 px-3 py-3 sm:px-4 sm:py-4 md:px-6 md:py-5 overflow-x-hidden">
       <div className="mx-auto w-full max-w-screen-2xl overflow-x-hidden">
-        <header className="flex flex-wrap items-center justify-between gap-2 mb-3 sm:mb-4">
-          <div>
+        <header className="flex items-center justify-between gap-2 mb-3 sm:mb-4">
+          <div className="min-w-0">
             <h1 className="text-base sm:text-lg font-semibold tracking-tight text-gray-900">
               SchedStack
             </h1>
@@ -86,7 +86,7 @@ export default function HomePage() {
           </div>
           <button
             onClick={() => setShowAddModal(true)}
-            className="px-3 py-1.5 text-sm font-medium rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors cursor-pointer"
+            className="flex-shrink-0 px-3 py-1.5 text-sm font-medium rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors cursor-pointer"
           >
             + Add
           </button>
