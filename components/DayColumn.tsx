@@ -38,7 +38,7 @@ export default function DayColumn({
       <div className="h-px bg-gray-200" />
 
       {/* Assignments */}
-      <div className="grid auto-rows-fr gap-1 sm:gap-1.5 flex-1 pt-1.5 sm:pt-2">
+      <div className="flex flex-col gap-1 sm:gap-1.5 flex-1 pt-1.5 sm:pt-2">
         {due.length === 0 && (
           <p className="text-[10px] sm:text-[11px] text-gray-300 text-center mt-6 sm:mt-8">
             No assignments

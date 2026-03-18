@@ -49,7 +49,7 @@ export default function AssignmentCard({
 
   return (
     <div
-      className={`flex overflow-hidden rounded-r transition-colors text-left h-full min-h-[72px] sm:min-h-[80px] ${cardStyle.bg} ${cardStyle.hover}`}
+      className={`flex overflow-hidden rounded-r transition-colors text-left h-[140px] sm:h-[150px] ${cardStyle.bg} ${cardStyle.hover}`}
     >
       {/* Vertical name strip */}
       <div
