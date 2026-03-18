@@ -38,6 +38,9 @@ export async function loadTasks(): Promise<Assignment[]> {
     dueDate: t.dueDate,
     assignedDate: t.dueDate,
     score: "",
+    pointsPossible: "",
+    notes: "",
+    isNotForGrading: false,
     childName: t.childName,
     childColor: t.childColor,
   }));

@@ -1,4 +1,12 @@
-import { addDays, addWeeks, format, isSameDay, parseISO, startOfWeek } from "date-fns";
+import {
+  addDays,
+  addWeeks,
+  differenceInCalendarDays,
+  format,
+  isSameDay,
+  parseISO,
+  startOfWeek,
+} from "date-fns";
 import type { Assignment } from "./parentvue/types";
 
 export function getWeekDays(weekOffset = 0): Date[] {
@@ -31,6 +39,16 @@ export function formatDayHeader(date: Date) {
 
 export function isToday(date: Date): boolean {
   return isSameDay(date, new Date());
+}
+
+export function getRelativeDueLabel(dueDate: string): string {
+  const diff = differenceInCalendarDays(parseISO(dueDate), new Date());
+  if (diff === 0) return "Today";
+  if (diff === 1) return "Tomorrow";
+  if (diff === -1) return "Yesterday";
+  if (diff > 1 && diff <= 7) return `In ${diff} days`;
+  if (diff < -1 && diff >= -7) return `${Math.abs(diff)} days ago`;
+  return "";
 }
 
 export function assignmentsDueOn(

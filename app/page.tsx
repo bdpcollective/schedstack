@@ -1,13 +1,42 @@
-import { getCachedData } from "@/lib/cache";
+"use client";
+
+import { useEffect, useState } from "react";
 import { getWeekDays } from "@/lib/dates";
 import WeekCalendar from "@/components/WeekCalendar";
 import ChildLegend from "@/components/ChildLegend";
-import RefreshButton from "@/components/RefreshButton";
+import type { SchedStackData } from "@/lib/parentvue/types";
 
-export const dynamic = "force-dynamic";
+const DATA_URL = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/data.json`;
 
-export default async function HomePage() {
-  const data = await getCachedData();
+export default function HomePage() {
+  const [data, setData] = useState<SchedStackData | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch(DATA_URL)
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
+      .then(setData)
+      .catch((e) => setError(e.message));
+  }, []);
+
+  if (error) {
+    return (
+      <main className="min-h-dvh flex items-center justify-center bg-white text-gray-900">
+        <p className="text-sm text-red-600">Failed to load data: {error}</p>
+      </main>
+    );
+  }
+
+  if (!data) {
+    return (
+      <main className="min-h-dvh flex items-center justify-center bg-white text-gray-900">
+        <p className="text-sm text-gray-400">Loading…</p>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-dvh bg-white text-gray-900 px-3 py-3 sm:px-4 sm:py-4 md:px-6 md:py-5">
@@ -18,16 +47,14 @@ export default async function HomePage() {
               SchedStack
             </h1>
             <span className="text-[10px] sm:text-[11px] text-gray-400">
+              Updated{" "}
               {new Date(data.lastRefreshed).toLocaleString("en-US", {
                 dateStyle: "medium",
                 timeStyle: "short",
               })}
             </span>
           </div>
-          <div className="flex items-center gap-2 sm:gap-3">
-            <ChildLegend childrenData={data.children} />
-            <RefreshButton />
-          </div>
+          <ChildLegend childrenData={data.children} />
         </header>
         <WeekCalendar
           assignments={data.assignments}

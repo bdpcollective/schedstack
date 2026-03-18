@@ -1,22 +1,17 @@
 import { formatDayHeader, isToday, assignmentsDueOn } from "@/lib/dates";
 import AssignmentCard from "./AssignmentCard";
-import AddTaskButton from "./AddTaskButton";
-import type { Assignment, Child } from "@/lib/parentvue/types";
-import { format } from "date-fns";
+import type { Assignment } from "@/lib/parentvue/types";
 
 export default function DayColumn({
   date,
   assignments,
-  children,
 }: {
   date: Date;
   assignments: Assignment[];
-  children: Child[];
 }) {
   const today = isToday(date);
   const due = assignmentsDueOn(assignments, date);
   const { dayName, dayNum } = formatDayHeader(date);
-  const isoDate = format(date, "yyyy-MM-dd");
 
   return (
     <div className="flex flex-col min-w-[130px] md:min-w-0 px-1 sm:px-1.5">
@@ -38,9 +33,6 @@ export default function DayColumn({
         >
           {dayNum}
         </span>
-        <div className="absolute right-0 top-2 sm:top-3">
-          <AddTaskButton date={isoDate} children={children} />
-        </div>
       </div>
 
       <div className="h-px bg-gray-200" />

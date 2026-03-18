@@ -8,6 +8,9 @@ export interface Assignment {
   dueDate: string; // ISO YYYY-MM-DD
   assignedDate: string; // ISO YYYY-MM-DD
   score: string;
+  pointsPossible: string;
+  notes: string;
+  isNotForGrading: boolean;
   childName: string;
   childColor: string;
 }

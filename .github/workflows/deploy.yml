@@ -1,0 +1,58 @@
+name: Build & Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Runs every day at 6:00 AM and 3:00 PM Central (11:00 UTC and 20:00 UTC)
+    - cron: "0 11 * * *"
+    - cron: "0 20 * * *"
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch ParentVUE data
+        run: node scripts/fetch-data.mjs
+        env:
+          PARENTVUE_URL: ${{ secrets.PARENTVUE_URL }}
+          PARENTVUE_USERNAME: ${{ secrets.PARENTVUE_USERNAME }}
+          PARENTVUE_PASSWORD: ${{ secrets.PARENTVUE_PASSWORD }}
+
+      - name: Build Next.js static site
+        run: npx next build
+        env:
+          GITHUB_PAGES: "true"
+          NEXT_PUBLIC_BASE_PATH: /schedstack
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

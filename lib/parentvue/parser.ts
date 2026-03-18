@@ -69,6 +69,9 @@ export async function parseGradebook(
           dueDate: toISO(a.$.DUEDATE),
           assignedDate: a.$.DATE ? toISO(a.$.DATE) : toISO(a.$.DUEDATE),
           score: a.$.SCORE ?? "",
+          pointsPossible: a.$.POINTSPOSSIBLE ?? "",
+          notes: a.$.NOTES ?? "",
+          isNotForGrading: a.$.ISNOTFORGRADING === "true",
           childName,
           childColor,
         });

@@ -72,7 +72,6 @@ export default function WeekCalendar({
             key={day.toISOString()}
             date={day}
             assignments={assignments}
-            children={children}
           />
         ))}
       </div>
