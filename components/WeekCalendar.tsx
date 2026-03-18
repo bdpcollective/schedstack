@@ -37,7 +37,7 @@ export default function WeekCalendar({
   }, [days]);
 
   return (
-    <div className="flex flex-col flex-1">
+    <div className="flex flex-col flex-1 overflow-x-hidden">
       {/* Navigation bar */}
       <div className="flex items-center justify-between mb-3 sm:mb-4">
         <button
