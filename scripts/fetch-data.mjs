@@ -190,11 +190,40 @@ function loadCustomTasks() {
   }
 }
 
+const HISTORY_PATH = join(ROOT, "data", "assignments.json");
+const SIX_MONTHS_MS = 6 * 30 * 24 * 60 * 60 * 1000;
+
+function loadHistory() {
+  try {
+    const raw = readFileSync(HISTORY_PATH, "utf-8");
+    return JSON.parse(raw);
+  } catch {
+    return { children: [], assignments: [] };
+  }
+}
+
+function mergeAssignments(existing, fresh) {
+  const map = new Map();
+  // Load existing first, then overwrite with fresh (fresh wins on same ID)
+  for (const a of existing) map.set(a.id, a);
+  for (const a of fresh) map.set(a.id, a);
+
+  // Prune assignments older than 6 months
+  const cutoff = new Date(Date.now() - SIX_MONTHS_MS).toISOString().slice(0, 10);
+  const merged = [];
+  for (const a of map.values()) {
+    if (a.dueDate >= cutoff) merged.push(a);
+  }
+
+  return merged;
+}
+
 async function main() {
   console.log("[fetch-data] Starting ParentVUE data fetch...");
 
+  const history = loadHistory();
   const children = [];
-  const allAssignments = [];
+  const freshAssignments = [];
 
   for (let i = 0; i < MAX_CHILDREN; i++) {
     try {
@@ -213,9 +242,9 @@ async function main() {
 
       const gradebookResponse = await callParentVue("Gradebook", i);
       const assignments = await parseGradebook(gradebookResponse, info.name, color.bg);
-      allAssignments.push(...assignments);
+      freshAssignments.push(...assignments);
 
-      console.log(`[fetch-data] Child ${i} (${info.name}): ${assignments.length} assignments`);
+      console.log(`[fetch-data] Child ${i} (${info.name}): ${assignments.length} new assignments`);
     } catch (err) {
       console.error(`[fetch-data] Error fetching child ${i}:`, err.message);
       if (children.length === 0 && i === 0) {
@@ -227,14 +256,24 @@ async function main() {
   }
 
   const customTasks = loadCustomTasks();
-  allAssignments.push(...customTasks);
+  freshAssignments.push(...customTasks);
 
+  const allAssignments = mergeAssignments(history.assignments, freshAssignments);
+
+  // Save accumulated history to data/assignments.json
+  mkdirSync(join(ROOT, "data"), { recursive: true });
+  const historyData = { children, assignments: allAssignments };
+  writeFileSync(HISTORY_PATH, JSON.stringify(historyData, null, 2));
+  console.log(
+    `[fetch-data] Saved history: ${allAssignments.length} total assignments (${freshAssignments.length} fresh, ${allAssignments.length - freshAssignments.length} from history)`
+  );
+
+  // Write public/data.json for the static site
   const data = {
     children,
     assignments: allAssignments,
     lastRefreshed: new Date().toISOString(),
   };
-
   mkdirSync(join(ROOT, "public"), { recursive: true });
   writeFileSync(join(ROOT, "public", "data.json"), JSON.stringify(data));
   console.log(
