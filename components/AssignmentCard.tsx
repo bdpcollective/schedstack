@@ -49,7 +49,7 @@ export default function AssignmentCard({
 
   return (
     <div
-      className={`flex overflow-hidden rounded-r transition-colors text-left min-h-[72px] sm:min-h-[80px] ${cardStyle.bg} ${cardStyle.hover}`}
+      className={`flex overflow-hidden rounded-r transition-colors text-left h-full min-h-[72px] sm:min-h-[80px] ${cardStyle.bg} ${cardStyle.hover}`}
     >
       {/* Vertical name strip */}
       <div
@@ -61,7 +61,7 @@ export default function AssignmentCard({
       </div>
 
       {/* Card content */}
-      <div className="flex-1 p-1.5 sm:p-2">
+      <div className="flex-1 p-1.5 sm:p-2 flex flex-col">
         {dueLabel && (
           <p className={`text-[9px] sm:text-[10px] mb-0.5 font-medium ${dueLabelColor(assignment.dueDate)}`}>
             {dueLabel}
@@ -70,7 +70,7 @@ export default function AssignmentCard({
         <p className="text-[16px] font-normal text-[#000] leading-snug line-clamp-2">
           {assignment.name}
         </p>
-        <p className="text-[9px] sm:text-[10px] text-[#000] mt-0.5 mb-2 truncate">
+        <p className="text-[9px] sm:text-[10px] text-[#000] mt-0.5 truncate">
           {assignment.course}
         </p>
         {assignment.notes && (
@@ -78,7 +78,7 @@ export default function AssignmentCard({
             {assignment.notes}
           </p>
         )}
-        <div className="flex items-center gap-1 sm:gap-1.5 mt-0.5 sm:mt-1 flex-wrap">
+        <div className="flex items-center gap-1 sm:gap-1.5 mt-auto pt-1.5 flex-wrap">
           <span
             className={`text-[9px] sm:text-[10px] px-1 sm:px-1.5 py-px rounded-full font-medium ${typeStyle.badge}`}
           >
@@ -89,12 +89,12 @@ export default function AssignmentCard({
               Practice
             </span>
           )}
-          {scoreDisplay && (
-            <span className="text-[9px] sm:text-[10px] text-[#000]">
-              Grade: {scoreDisplay}
-            </span>
-          )}
         </div>
+        {scoreDisplay && (
+          <p className="text-[9px] sm:text-[10px] text-[#000] mt-1 font-medium">
+            Grade: {scoreDisplay}
+          </p>
+        )}
       </div>
     </div>
   );
