@@ -37,8 +37,10 @@ function dueLabelColor(dueDate: string): string {
 
 export default function AssignmentCard({
   assignment,
+  onDelete,
 }: {
   assignment: Assignment;
+  onDelete?: () => void;
 }) {
   const typeStyle = TYPE_STYLES[assignment.type] ?? TYPE_STYLES.other;
   const cardStyle = CHILD_CARD_STYLES[assignment.childColor] ?? {
@@ -61,7 +63,18 @@ export default function AssignmentCard({
       </div>
 
       {/* Card content */}
-      <div className="flex-1 p-1.5 sm:p-2 flex flex-col">
+      <div className="flex-1 p-1.5 sm:p-2 flex flex-col relative">
+        {onDelete && (
+          <button
+            onClick={onDelete}
+            className="absolute top-1 right-1 w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:bg-gray-200 hover:text-gray-600 transition-colors cursor-pointer"
+            aria-label="Delete task"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3 h-3">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        )}
         {dueLabel && (
           <p className={`text-[9px] sm:text-[10px] mb-0.5 font-medium ${dueLabelColor(assignment.dueDate)}`}>
             {dueLabel}

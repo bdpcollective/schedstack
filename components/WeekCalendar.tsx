@@ -3,16 +3,28 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { getWeekDays, formatWeekRange, isCurrentWeek, isToday } from "@/lib/dates";
 import DayColumn from "./DayColumn";
-import type { Assignment, Child } from "@/lib/parentvue/types";
+import type { Assignment, AssignmentType, Child } from "@/lib/parentvue/types";
 
 export default function WeekCalendar({
   assignments,
   initialDays,
   children,
+  onAdd,
+  onDelete,
 }: {
   assignments: Assignment[];
   initialDays: string[];
   children: Child[];
+  onAdd: (input: {
+    name: string;
+    course: string;
+    type: AssignmentType;
+    dueDate: string;
+    childName: string;
+    childColor: string;
+    notes: string;
+  }) => void;
+  onDelete: (id: string) => void;
 }) {
   const [weekOffset, setWeekOffset] = useState(0);
   const onCurrentWeek = isCurrentWeek(weekOffset);
@@ -82,6 +94,9 @@ export default function WeekCalendar({
             key={day.toISOString()}
             date={day}
             assignments={assignments}
+            children={children}
+            onAdd={onAdd}
+            onDelete={onDelete}
           />
         ))}
       </div>

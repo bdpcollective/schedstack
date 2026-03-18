@@ -1,15 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { getWeekDays } from "@/lib/dates";
 import WeekCalendar from "@/components/WeekCalendar";
 import ChildLegend from "@/components/ChildLegend";
-import type { SchedStackData } from "@/lib/parentvue/types";
+import { getLocalTasks, addLocalTask, deleteLocalTask } from "@/lib/local-tasks";
+import type { Assignment, AssignmentType, SchedStackData } from "@/lib/parentvue/types";
 
 const DATA_URL = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/data.json`;
 
 export default function HomePage() {
-  const [data, setData] = useState<SchedStackData | null>(null);
+  const [serverData, setServerData] = useState<SchedStackData | null>(null);
+  const [localTasks, setLocalTasks] = useState<Assignment[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -18,8 +20,32 @@ export default function HomePage() {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();
       })
-      .then(setData)
+      .then((data: SchedStackData) => {
+        setServerData(data);
+        setLocalTasks(getLocalTasks());
+      })
       .catch((e) => setError(e.message));
+  }, []);
+
+  const handleAdd = useCallback(
+    (input: {
+      name: string;
+      course: string;
+      type: AssignmentType;
+      dueDate: string;
+      childName: string;
+      childColor: string;
+      notes: string;
+    }) => {
+      const task = addLocalTask(input);
+      setLocalTasks((prev) => [...prev, task]);
+    },
+    []
+  );
+
+  const handleDelete = useCallback((id: string) => {
+    deleteLocalTask(id);
+    setLocalTasks((prev) => prev.filter((t) => t.id !== id));
   }, []);
 
   if (error) {
@@ -30,13 +56,15 @@ export default function HomePage() {
     );
   }
 
-  if (!data) {
+  if (!serverData) {
     return (
       <main className="min-h-dvh flex items-center justify-center bg-white text-gray-900">
-        <p className="text-sm text-gray-400">Loading…</p>
+        <p className="text-sm text-gray-400">Loading...</p>
       </main>
     );
   }
+
+  const allAssignments = [...serverData.assignments, ...localTasks];
 
   return (
     <main className="min-h-dvh bg-white text-gray-900 px-3 py-3 sm:px-4 sm:py-4 md:px-6 md:py-5">
@@ -48,18 +76,20 @@ export default function HomePage() {
             </h1>
             <span className="text-[10px] sm:text-[11px] text-gray-400">
               Updated{" "}
-              {new Date(data.lastRefreshed).toLocaleString("en-US", {
+              {new Date(serverData.lastRefreshed).toLocaleString("en-US", {
                 dateStyle: "medium",
                 timeStyle: "short",
               })}
             </span>
           </div>
-          <ChildLegend childrenData={data.children} />
+          <ChildLegend childrenData={serverData.children} />
         </header>
         <WeekCalendar
-          assignments={data.assignments}
+          assignments={allAssignments}
           initialDays={getWeekDays(0).map((d) => d.toISOString())}
-          children={data.children}
+          children={serverData.children}
+          onAdd={handleAdd}
+          onDelete={handleDelete}
         />
       </div>
     </main>
