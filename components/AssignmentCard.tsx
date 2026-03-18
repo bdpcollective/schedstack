@@ -57,7 +57,7 @@ export default function AssignmentCard({
       <div
         className={`relative flex-shrink-0 w-5 sm:w-6 ${cardStyle.strip}`}
       >
-        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 whitespace-nowrap text-[8px] sm:text-[9px] font-bold text-white uppercase tracking-wider">
+        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 whitespace-nowrap text-[10px] font-bold text-white uppercase tracking-wider">
           {assignment.childName.split(" ")[0]}
         </span>
       </div>
