@@ -80,7 +80,7 @@ export default function AssignmentCard({
             {dueLabel}
           </p>
         )}
-        <p className="text-[16px] font-normal text-[#000] leading-snug line-clamp-2">
+        <p className="text-[16px] font-bold text-[#000] leading-snug line-clamp-2">
           {assignment.name}
         </p>
         <p className="text-[9px] sm:text-[10px] text-[#000] mt-0.5 truncate">
