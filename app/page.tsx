@@ -73,7 +73,7 @@ export default function HomePage() {
       <div className="mx-auto w-full max-w-screen-2xl overflow-x-hidden">
         <header className="flex items-center justify-between gap-2 mb-3 sm:mb-4">
           <div className="min-w-0">
-            <h1 className="text-base sm:text-lg font-semibold tracking-tight text-gray-900">
+            <h1 className="text-[20px] font-semibold tracking-tight text-gray-900">
               SchedStack
             </h1>
             <span className="text-[10px] sm:text-[11px] text-gray-400">
