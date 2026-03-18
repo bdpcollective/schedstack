@@ -14,7 +14,7 @@ export default function DayColumn({
   const { dayName, dayNum } = formatDayHeader(date);
 
   return (
-    <div className="flex flex-col min-w-[130px] md:min-w-0 px-1 sm:px-1.5">
+    <div className="flex flex-col min-w-[calc(50vw-20px)] snap-start md:min-w-0 md:snap-align-none px-1 sm:px-1.5">
       {/* Day header — Apple Calendar style */}
       <div className="flex flex-col items-center py-2 sm:py-3 relative">
         <span

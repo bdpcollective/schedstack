@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { getWeekDays, formatWeekRange, isCurrentWeek } from "@/lib/dates";
+import { useState, useMemo, useRef, useEffect } from "react";
+import { getWeekDays, formatWeekRange, isCurrentWeek, isToday } from "@/lib/dates";
 import DayColumn from "./DayColumn";
 import type { Assignment, Child } from "@/lib/parentvue/types";
 
@@ -23,6 +23,16 @@ export default function WeekCalendar({
   }, [weekOffset, onCurrentWeek, initialDays]);
 
   const weekRange = formatWeekRange(days);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const todayIdx = days.findIndex((d) => isToday(d));
+    if (todayIdx <= 0) return;
+    const col = container.children[todayIdx] as HTMLElement;
+    if (col) container.scrollLeft = col.offsetLeft;
+  }, [days]);
 
   return (
     <div className="flex flex-col flex-1">
@@ -66,7 +76,7 @@ export default function WeekCalendar({
       </div>
 
       {/* Day columns */}
-      <div className="flex overflow-x-auto pb-4 hide-scrollbar md:grid md:grid-cols-7 md:overflow-visible md:divide-x md:divide-gray-200 flex-1">
+      <div ref={scrollRef} className="flex overflow-x-auto snap-x snap-mandatory pb-4 hide-scrollbar md:grid md:grid-cols-7 md:overflow-visible md:snap-none md:divide-x md:divide-gray-200 flex-1">
         {days.map((day) => (
           <DayColumn
             key={day.toISOString()}
