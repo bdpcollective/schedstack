@@ -2,7 +2,9 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { getWeekDays } from "@/lib/dates";
+import { format } from "date-fns";
 import WeekCalendar from "@/components/WeekCalendar";
+import AddTaskModal from "@/components/AddTaskModal";
 import { getLocalTasks, addLocalTask, deleteLocalTask } from "@/lib/local-tasks";
 import type { Assignment, AssignmentType, SchedStackData } from "@/lib/parentvue/types";
 
@@ -12,6 +14,7 @@ export default function HomePage() {
   const [serverData, setServerData] = useState<SchedStackData | null>(null);
   const [localTasks, setLocalTasks] = useState<Assignment[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [showAddModal, setShowAddModal] = useState(false);
 
   useEffect(() => {
     fetch(DATA_URL)
@@ -81,15 +84,29 @@ export default function HomePage() {
               })}
             </span>
           </div>
+          <button
+            onClick={() => setShowAddModal(true)}
+            className="px-3 py-1.5 text-sm font-medium rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors cursor-pointer"
+          >
+            + Add
+          </button>
         </header>
         <WeekCalendar
           assignments={allAssignments}
           initialDays={getWeekDays(0).map((d) => d.toISOString())}
           children={serverData.children}
-          onAdd={handleAdd}
           onDelete={handleDelete}
         />
       </div>
+
+      {showAddModal && (
+        <AddTaskModal
+          date={format(new Date(), "yyyy-MM-dd")}
+          children={serverData.children}
+          onAdd={handleAdd}
+          onClose={() => setShowAddModal(false)}
+        />
+      )}
     </main>
   );
 }
