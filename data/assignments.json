@@ -2649,6 +2649,48 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2281147",
+      "name": "Gustar Notes",
+      "course": "Spanish A (1618)",
+      "type": "homework",
+      "dueDate": "2026-03-20",
+      "assignedDate": "2026-03-17",
+      "score": "",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Holden D. Pope",
+      "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2283776",
+      "name": "Environmental Research \"Blueprint\" Slides",
+      "course": "Science 6 (3600)",
+      "type": "other",
+      "dueDate": "2026-03-18",
+      "assignedDate": "2026-03-12",
+      "score": "6",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Holden D. Pope",
+      "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2044509",
+      "name": "Choir Participation and Rehearsal Etiquette",
+      "course": "Choir 6 (7630)",
+      "type": "other",
+      "dueDate": "2025-09-23",
+      "assignedDate": "2025-09-23",
+      "score": "10",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Holden D. Pope",
+      "childColor": "bg-emerald-500"
     }
   ]
 }
