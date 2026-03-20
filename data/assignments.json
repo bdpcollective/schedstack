@@ -1369,7 +1369,7 @@
       "type": "other",
       "dueDate": "2026-03-02",
       "assignedDate": "2026-02-27",
-      "score": "",
+      "score": "14",
       "pointsPossible": "",
       "notes": "Turned In  - turned in - grade will change once I grade it!",
       "isNotForGrading": false,
@@ -2657,7 +2657,7 @@
       "type": "homework",
       "dueDate": "2026-03-20",
       "assignedDate": "2026-03-17",
-      "score": "",
+      "score": "10",
       "pointsPossible": "",
       "notes": "",
       "isNotForGrading": false,
@@ -2719,6 +2719,48 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2286553",
+      "name": "Persuasive Essay",
+      "course": "Debate (0022)",
+      "type": "other",
+      "dueDate": "2026-03-20",
+      "assignedDate": "2026-03-20",
+      "score": "",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2286577",
+      "name": "Week 4 Fill in the Blank",
+      "course": "Honors English 9 (0003B)",
+      "type": "other",
+      "dueDate": "2026-03-23",
+      "assignedDate": "2026-03-19",
+      "score": "",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2287371",
+      "name": "VOCAB MAN (Unit 4, Lesson 1)",
+      "course": "Spanish I (0152B)",
+      "type": "homework",
+      "dueDate": "2026-03-20",
+      "assignedDate": "2026-03-18",
+      "score": "",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
