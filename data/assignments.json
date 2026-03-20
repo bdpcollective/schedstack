@@ -2705,6 +2705,20 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2283076",
+      "name": "Solfege 1: Write It In!",
+      "course": "Choir 6 (7630)",
+      "type": "other",
+      "dueDate": "2026-03-10",
+      "assignedDate": "2026-03-10",
+      "score": "100",
+      "pointsPossible": "",
+      "notes": "(Not For Grading) ",
+      "isNotForGrading": false,
+      "childName": "Holden D. Pope",
+      "childColor": "bg-emerald-500"
     }
   ]
 }
