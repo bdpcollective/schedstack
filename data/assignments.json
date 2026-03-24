@@ -3111,6 +3111,20 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2290604",
+      "name": "climate change comic/diagram",
+      "course": "Science 6 (3600)",
+      "type": "homework",
+      "dueDate": "2026-03-20",
+      "assignedDate": "2026-03-18",
+      "score": "10",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Holden D. Pope",
+      "childColor": "bg-emerald-500"
     }
   ]
 }
