@@ -2909,7 +2909,7 @@
       "type": "test",
       "dueDate": "2026-03-23",
       "assignedDate": "2026-02-23",
-      "score": "",
+      "score": "9.5",
       "pointsPossible": "",
       "notes": "",
       "isNotForGrading": false,
@@ -3237,6 +3237,34 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2296864",
+      "name": "Graphing in Standard Form WS",
+      "course": "Algebra 2 (MA18)",
+      "type": "homework",
+      "dueDate": "2026-03-27",
+      "assignedDate": "2026-03-25",
+      "score": "2",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2295831",
+      "name": "3/27/26",
+      "course": "Physical Education 6 (8600)",
+      "type": "other",
+      "dueDate": "2026-03-27",
+      "assignedDate": "2026-03-27",
+      "score": "10",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Holden D. Pope",
+      "childColor": "bg-emerald-500"
     }
   ]
 }
