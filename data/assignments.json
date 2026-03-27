@@ -2713,7 +2713,7 @@
       "type": "other",
       "dueDate": "2026-03-20",
       "assignedDate": "2026-03-20",
-      "score": "",
+      "score": "28",
       "pointsPossible": "",
       "notes": "",
       "isNotForGrading": false,
@@ -3223,6 +3223,20 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2295495",
+      "name": "PROYECTO: Likes/Dislikes",
+      "course": "Spanish I (0152B)",
+      "type": "test",
+      "dueDate": "2026-03-27",
+      "assignedDate": "2026-03-25",
+      "score": "",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
