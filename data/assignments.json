@@ -3405,6 +3405,34 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2303181",
+      "name": "District Reading Assessment - ACT Style",
+      "course": "Honors English 9 (0003B)",
+      "type": "other",
+      "dueDate": "2026-04-01",
+      "assignedDate": "2026-04-01",
+      "score": "13",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2303182",
+      "name": "AWA! WOOO!",
+      "course": "Honors English 9 (0003B)",
+      "type": "other",
+      "dueDate": "2026-03-26",
+      "assignedDate": "2026-03-26",
+      "score": "0",
+      "pointsPossible": "",
+      "notes": "Missing ",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
