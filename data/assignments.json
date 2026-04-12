@@ -3713,6 +3713,20 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2309247",
+      "name": "Vertex Form WS",
+      "course": "Algebra 2 (MA18)",
+      "type": "homework",
+      "dueDate": "2026-04-03",
+      "assignedDate": "2026-04-01",
+      "score": "",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
