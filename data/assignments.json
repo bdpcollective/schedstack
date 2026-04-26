@@ -4427,6 +4427,20 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2330305",
+      "name": "EdPuzzle: Adjective Agreement",
+      "course": "Spanish I (0152B)",
+      "type": "homework",
+      "dueDate": "2026-04-28",
+      "assignedDate": "2026-04-24",
+      "score": "",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
