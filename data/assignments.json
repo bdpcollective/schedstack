@@ -4491,7 +4491,7 @@
       "type": "other",
       "dueDate": "2026-04-29",
       "assignedDate": "2026-04-27",
-      "score": "",
+      "score": "13",
       "pointsPossible": "",
       "notes": "",
       "isNotForGrading": false,
@@ -4505,7 +4505,7 @@
       "type": "other",
       "dueDate": "2026-04-27",
       "assignedDate": "2026-04-27",
-      "score": "",
+      "score": "0",
       "pointsPossible": "",
       "notes": "",
       "isNotForGrading": false,
@@ -4637,6 +4637,48 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2336197",
+      "name": "Week 3 Cornell Notes ",
+      "course": "Honors English 9 (0003B)",
+      "type": "other",
+      "dueDate": "2026-05-01",
+      "assignedDate": "2026-04-29",
+      "score": "",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2336418",
+      "name": "Bell Ringer Check",
+      "course": "Spanish I (0152B)",
+      "type": "homework",
+      "dueDate": "2026-04-28",
+      "assignedDate": "2026-04-28",
+      "score": "0",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2334988",
+      "name": "4/29/26",
+      "course": "Physical Education 6 (8600)",
+      "type": "other",
+      "dueDate": "2026-04-29",
+      "assignedDate": "2026-04-29",
+      "score": "10",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Holden D. Pope",
+      "childColor": "bg-emerald-500"
     }
   ]
 }
