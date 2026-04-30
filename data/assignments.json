@@ -4679,6 +4679,34 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2336671",
+      "name": "MJI Vocab Quiz",
+      "course": "Debate (0022)",
+      "type": "other",
+      "dueDate": "2026-04-29",
+      "assignedDate": "2026-04-24",
+      "score": "",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2336634",
+      "name": "¿Qué comida o bebida es?",
+      "course": "Spanish I (0152B)",
+      "type": "homework",
+      "dueDate": "2026-04-28",
+      "assignedDate": "2026-04-24",
+      "score": "7",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
