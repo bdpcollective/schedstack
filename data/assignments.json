@@ -4805,6 +4805,20 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2340811",
+      "name": "Solving quadratics by completing the square WS",
+      "course": "Algebra 2 (MA18)",
+      "type": "homework",
+      "dueDate": "2026-04-30",
+      "assignedDate": "2026-04-27",
+      "score": "0",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
