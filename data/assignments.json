@@ -5085,6 +5085,48 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2350655",
+      "name": "EdPuzzle: ¿Cuánto cuesta? ",
+      "course": "Spanish I (0152B)",
+      "type": "homework",
+      "dueDate": "2026-05-08",
+      "assignedDate": "2026-05-07",
+      "score": "4",
+      "pointsPossible": "",
+      "notes": "+4 Cinco de mayo video",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2350982",
+      "name": "Tuck ch 1-6 quiz",
+      "course": "English Language Arts 6 (0600)",
+      "type": "quiz",
+      "dueDate": "2026-05-04",
+      "assignedDate": "2026-05-04",
+      "score": "24",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Holden D. Pope",
+      "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2350934",
+      "name": "Tuck work ch 1-6",
+      "course": "English Language Arts 6 (0600)",
+      "type": "other",
+      "dueDate": "2026-05-04",
+      "assignedDate": "2026-04-27",
+      "score": "24",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Holden D. Pope",
+      "childColor": "bg-emerald-500"
     }
   ]
 }
