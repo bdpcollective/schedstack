@@ -4519,7 +4519,7 @@
       "type": "other",
       "dueDate": "2026-04-24",
       "assignedDate": "2026-04-22",
-      "score": "",
+      "score": "11",
       "pointsPossible": "",
       "notes": "",
       "isNotForGrading": false,
@@ -4953,9 +4953,9 @@
       "type": "other",
       "dueDate": "2026-05-08",
       "assignedDate": "2026-05-04",
-      "score": "",
+      "score": "0",
       "pointsPossible": "",
-      "notes": "",
+      "notes": "Missing ",
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
@@ -5149,7 +5149,7 @@
       "type": "test",
       "dueDate": "2026-05-10",
       "assignedDate": "2026-05-10",
-      "score": "",
+      "score": "26",
       "pointsPossible": "",
       "notes": "",
       "isNotForGrading": false,
@@ -5309,6 +5309,34 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2353749",
+      "name": "Evaluating nth roots WS",
+      "course": "Algebra 2 (MA18)",
+      "type": "homework",
+      "dueDate": "2026-05-12",
+      "assignedDate": "2026-05-08",
+      "score": "",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2353745",
+      "name": "Square Root Graphing WS",
+      "course": "Algebra 2 (MA18)",
+      "type": "homework",
+      "dueDate": "2026-05-08",
+      "assignedDate": "2026-05-06",
+      "score": "2",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
