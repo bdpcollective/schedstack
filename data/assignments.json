@@ -5037,7 +5037,7 @@
       "type": "homework",
       "dueDate": "2026-05-14",
       "assignedDate": "2026-05-07",
-      "score": "",
+      "score": "9",
       "pointsPossible": "",
       "notes": "",
       "isNotForGrading": false,
@@ -5393,6 +5393,62 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2358358",
+      "name": "Final Project ",
+      "course": "AP Human Geography (0456B)",
+      "type": "test",
+      "dueDate": "2026-05-22",
+      "assignedDate": "2026-01-06",
+      "score": "",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2358272",
+      "name": "EC choice board 2",
+      "course": "AP Human Geography (0456B)",
+      "type": "quiz",
+      "dueDate": "2026-05-18",
+      "assignedDate": "2026-04-13",
+      "score": "",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2358292",
+      "name": "Final ",
+      "course": "AP Human Geography (0456B)",
+      "type": "test",
+      "dueDate": "2026-05-13",
+      "assignedDate": "2026-01-06",
+      "score": "44.5",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2358288",
+      "name": "Final map test",
+      "course": "AP Human Geography (0456B)",
+      "type": "test",
+      "dueDate": "2026-05-13",
+      "assignedDate": "2026-01-06",
+      "score": "96",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
