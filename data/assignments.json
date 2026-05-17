@@ -5345,7 +5345,7 @@
       "type": "homework",
       "dueDate": "2026-05-14",
       "assignedDate": "2026-05-12",
-      "score": "",
+      "score": "15",
       "pointsPossible": "",
       "notes": "",
       "isNotForGrading": false,
@@ -5561,6 +5561,20 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2361685",
+      "name": "EXAMEN: Unidad 4",
+      "course": "Spanish I (0152B)",
+      "type": "test",
+      "dueDate": "2026-05-15",
+      "assignedDate": "2026-05-15",
+      "score": "56.25",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
