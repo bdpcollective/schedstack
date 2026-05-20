@@ -5709,7 +5709,7 @@
       "type": "homework",
       "dueDate": "2026-05-22",
       "assignedDate": "2026-05-18",
-      "score": "",
+      "score": "10",
       "pointsPossible": "",
       "notes": "",
       "isNotForGrading": false,
@@ -5737,7 +5737,7 @@
       "type": "homework",
       "dueDate": "2026-05-15",
       "assignedDate": "2026-04-29",
-      "score": "",
+      "score": "22",
       "pointsPossible": "",
       "notes": "",
       "isNotForGrading": false,
@@ -5799,6 +5799,34 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2368365",
+      "name": "Solving Radical Equations WS",
+      "course": "Algebra 2 (MA18)",
+      "type": "homework",
+      "dueDate": "2026-05-21",
+      "assignedDate": "2026-05-18",
+      "score": "",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2368449",
+      "name": "Dímelos - Unidad 4",
+      "course": "Spanish I (0152B)",
+      "type": "quiz",
+      "dueDate": "2026-05-22",
+      "assignedDate": "2026-04-16",
+      "score": "",
+      "pointsPossible": "",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
