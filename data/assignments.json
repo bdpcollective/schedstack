@@ -6261,20 +6261,6 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2161488",
-      "name": "Unit 4 Exam Genetics",
-      "course": "Biology (0327A)",
-      "type": "test",
-      "dueDate": "2025-12-11",
-      "assignedDate": "2025-12-11",
-      "score": "26",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
     }
   ]
 }
