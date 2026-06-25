@@ -5,10 +5,10 @@ on:
     branches: [main]
     paths-ignore:
       - "data/assignments.json"
-  schedule:
-    # Runs every day at 6:00 AM and 3:00 PM Central (11:00 UTC and 20:00 UTC)
-    - cron: "0 11 * * *"
-    - cron: "0 20 * * *"
+  # schedule:
+  #   # Runs every day at 6:00 AM and 3:00 PM Central (11:00 UTC and 20:00 UTC)
+  #   - cron: "0 11 * * *"
+  #   - cron: "0 20 * * *"
   workflow_dispatch: # Allow manual trigger
 
 permissions:
@@ -34,22 +34,22 @@ jobs:
 
       - run: npm ci
 
-      - name: Fetch ParentVUE data
-        run: node scripts/fetch-data.mjs
-        env:
-          PARENTVUE_URL: ${{ secrets.PARENTVUE_URL }}
-          PARENTVUE_USERNAME: ${{ secrets.PARENTVUE_USERNAME }}
-          PARENTVUE_PASSWORD: ${{ secrets.PARENTVUE_PASSWORD }}
+      # - name: Fetch ParentVUE data
+      #   run: node scripts/fetch-data.mjs
+      #   env:
+      #     PARENTVUE_URL: ${{ secrets.PARENTVUE_URL }}
+      #     PARENTVUE_USERNAME: ${{ secrets.PARENTVUE_USERNAME }}
+      #     PARENTVUE_PASSWORD: ${{ secrets.PARENTVUE_PASSWORD }}
 
-      - name: Commit updated assignment history
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/assignments.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Update assignment history [skip ci]"
-            git push
-          fi
+      # - name: Commit updated assignment history
+      #   run: |
+      #     git config user.name "github-actions[bot]"
+      #     git config user.email "github-actions[bot]@users.noreply.github.com"
+      #     git add data/assignments.json
+      #     if ! git diff --cached --quiet; then
+      #       git commit -m "Update assignment history [skip ci]"
+      #       git push
+      #     fi
 
       - name: Build Next.js static site
         run: npx next build
