@@ -4,6 +4,8 @@
  * Standalone script to fetch ParentVUE data and write public/data.json.
  * Runs in GitHub Actions before `next build`.
  *
+ * Uses the new ParentVUE JSON API (replaces deprecated SOAP/PXPCommunication.asmx).
+ *
  * Required env vars: PARENTVUE_URL, PARENTVUE_USERNAME, PARENTVUE_PASSWORD
  * Optional: PARENTVUE_MAX_CHILDREN (default 5)
  */
@@ -11,12 +13,10 @@
 import { writeFileSync, mkdirSync, readFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { parseString } from "xml2js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 
-const SOAP_ACTION = "http://edupoint.com/webservices/ProcessWebServiceRequest";
 const BASE_URL = process.env.PARENTVUE_URL;
 const USERNAME = process.env.PARENTVUE_USERNAME;
 const PASSWORD = process.env.PARENTVUE_PASSWORD;
@@ -35,74 +35,160 @@ if (!BASE_URL || !USERNAME || !PASSWORD) {
   process.exit(1);
 }
 
-function buildSoapEnvelope(methodName, paramStr) {
-  const encoded = paramStr
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+const API_BASE = `${BASE_URL}/api/v1/mobile/PXPWebServices`;
 
-  return `<?xml version="1.0" encoding="utf-8"?>
-<soap:Envelope
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-  xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-  <soap:Body>
-    <ProcessWebServiceRequest xmlns="http://edupoint.com/webservices/">
-      <userID>${USERNAME}</userID>
-      <password>${PASSWORD}</password>
-      <skipLoginLog>1</skipLoginLog>
-      <parent>1</parent>
-      <webServiceHandleName>PXPWebServices</webServiceHandleName>
-      <methodName>${methodName}</methodName>
-      <paramStr>${encoded}</paramStr>
-    </ProcessWebServiceRequest>
-  </soap:Body>
-</soap:Envelope>`;
-}
+const COMMON_HEADERS = {
+  "Content-Type": "application/json",
+  "User-Agent": "ksoap",
+  AppNameOSAndVersion: "StudentVUE|Android|1.9.16",
+};
 
-async function callParentVue(methodName, childIntID) {
-  const endpoint = `${BASE_URL}/Service/PXPCommunication.asmx`;
-  const paramStr = `<Parms><ChildIntID>${childIntID}</ChildIntID></Parms>`;
-  const envelope = buildSoapEnvelope(methodName, paramStr);
+// --- Authentication ---
 
-  const response = await fetch(endpoint, {
+async function login() {
+  const basicAuth = Buffer.from(`${USERNAME}:${PASSWORD}`).toString("base64");
+
+  const res = await fetch(`${API_BASE}/AttemptLogin`, {
     method: "POST",
     headers: {
-      "Content-Type": "text/xml; charset=utf-8",
-      SOAPAction: SOAP_ACTION,
+      ...COMMON_HEADERS,
+      Authorization: `Basic ${basicAuth}`,
     },
-    body: envelope,
+    body: JSON.stringify({
+      arguments: {
+        request: JSON.stringify({
+          userID: null,
+          password: null,
+          userType: "parent",
+        }),
+      },
+    }),
   });
 
-  if (!response.ok) {
-    throw new Error(`ParentVUE HTTP ${response.status}: ${response.statusText}`);
+  if (!res.ok) {
+    throw new Error(`Login HTTP ${res.status}: ${res.statusText}`);
   }
-  return response.text();
+
+  const body = await res.json();
+  if (body.error) {
+    throw new Error(`Login error: ${body.error.message ?? JSON.stringify(body.error)}`);
+  }
+
+  const token = body.access_token ?? body.data?.access_token;
+  if (!token) {
+    throw new Error(`Login failed — no access_token in response: ${JSON.stringify(body)}`);
+  }
+
+  return token;
 }
 
-function extractResponseXml(soapResponse) {
-  const match = soapResponse.match(
-    /<ProcessWebServiceRequestResult>([\s\S]*?)<\/ProcessWebServiceRequestResult>/
-  );
-  if (!match) throw new Error("Could not extract result from SOAP response");
-  return match[1]
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&amp;/g, "&");
-}
+// --- API caller ---
 
-function parseXml(xmlStr) {
-  return new Promise((resolve, reject) => {
-    parseString(xmlStr, { explicitArray: true, strict: false }, (err, result) => {
-      if (err) reject(err);
-      else resolve(result);
-    });
+async function callApi(method, requestParams, token) {
+  const res = await fetch(`${API_BASE}/${method}`, {
+    method: "POST",
+    headers: {
+      ...COMMON_HEADERS,
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      arguments: {
+        request: JSON.stringify(requestParams),
+      },
+    }),
   });
+
+  if (!res.ok) {
+    throw new Error(`${method} HTTP ${res.status}: ${res.statusText}`);
+  }
+
+  const body = await res.json();
+  if (body.error) {
+    throw new Error(`${method} error: ${body.error.message ?? JSON.stringify(body.error)}`);
+  }
+
+  return body.data ?? body;
 }
 
-function toISO(dateStr) {
+// --- Data fetching ---
+
+async function getChildList(token) {
+  const data = await callApi("GetChildListData", {
+    legacyAppRequest: false,
+    secondaryLogin: false,
+  }, token);
+
+  return data.children?.childrenList ?? data.childrenList ?? [];
+}
+
+async function getStudentInfo(childIntID, token) {
+  const data = await callApi("GetStudentInfoData", { childIntID }, token);
+
+  // Student details are in studentInfoDetailXML (despite the name, it's JSON)
+  const info = data.studentInfoDetailXML ?? data.studentInfoXML ?? data;
+  const rawName = info.formattedName ?? info.name ??
+    `${info.firstName ?? ""} ${info.lastName ?? ""}`.trim();
+  const name = rawName || "Student";
+  const grade = info.grade ?? info.currentGradeLevel ?? "";
+
+  return { name, grade };
+}
+
+async function getGradebook(childIntID, orgYearGU, childName, childColor, token) {
+  const data = await callApi("Gradebook", {
+    reportPeriod: "0",
+    concurrentSchOrgYearGU: orgYearGU,
+    childIntID,
+    languageCode: "en",
+  }, token);
+
+  const gradebook = data.traditionalGradebook ?? data;
+  const courses = gradebook.courses ?? [];
+  const assignments = [];
+
+  for (const course of courses) {
+    const courseName = course.title ?? course.courseName ?? "Unknown";
+    const marks = course.marks ?? [];
+    for (const mark of marks) {
+      const rawAssignments = mark.assignments ?? [];
+      for (const a of rawAssignments) {
+        const dueDate = a.dueDate ?? a.date;
+        if (!dueDate) continue;
+        // "points" is a string like "15 Points Possible" — extract the number
+        const pointsMatch = (a.points ?? "").match(/^([\d.]+)/);
+        const pointsPossible = a.pointPossible ?? pointsMatch?.[1] ?? "";
+        assignments.push({
+          id: String(a.gradebookID ?? `${courseName}-${a.measure ?? a.name}`),
+          name: a.measure ?? a.name ?? "Untitled",
+          course: courseName,
+          type: normalizeType(a.type ?? ""),
+          dueDate: normalizeDate(dueDate),
+          assignedDate: normalizeDate(a.date ?? dueDate),
+          score: a.score ?? a.displayScore ?? "",
+          pointsPossible: String(pointsPossible),
+          notes: a.notes ?? "",
+          isNotForGrading: a.displayScore === "Not Graded" || a.score === null,
+          childName,
+          childColor,
+        });
+      }
+    }
+  }
+  return assignments;
+}
+
+// --- Helpers ---
+
+function normalizeDate(dateStr) {
+  if (!dateStr) return "";
+  // If already ISO format (YYYY-MM-DD), return as-is
+  if (/^\d{4}-\d{2}-\d{2}/.test(dateStr)) return dateStr.slice(0, 10);
+  // Convert MM/DD/YYYY to YYYY-MM-DD
   const [month, day, year] = dateStr.split("/");
-  return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+  if (month && day && year) {
+    return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+  }
+  return dateStr;
 }
 
 function normalizeType(raw) {
@@ -112,59 +198,6 @@ function normalizeType(raw) {
   if (lower.includes("project") || lower.includes("essay")) return "project";
   if (lower.includes("homework") || lower.includes("hw")) return "homework";
   return "other";
-}
-
-async function parseStudentInfo(soapResponse) {
-  const xmlStr = extractResponseXml(soapResponse);
-  const parsed = await parseXml(xmlStr);
-  const student = parsed?.STUDENTINFO;
-  if (!student) {
-    const root = parsed ? Object.values(parsed)[0] : null;
-    const errMsg = root?.$?.ERRORMESSAGE ?? root?.$?.RT_ERROR;
-    if (errMsg) throw new Error(String(errMsg));
-    throw new Error("Invalid student info response");
-  }
-  const fullName = `${student.FIRSTNAME?.[0] ?? ""} ${student.LASTNAME?.[0] ?? ""}`.trim();
-  const name = student.FORMATTEDNAME?.[0] ?? (fullName || "Student");
-  const grade = student.GRADE?.[0] ?? "";
-  return { name, grade };
-}
-
-async function parseGradebook(soapResponse, childName, childColor) {
-  const xmlStr = extractResponseXml(soapResponse);
-  const parsed = await parseXml(xmlStr);
-  const gradebook = parsed?.GRADEBOOK;
-  if (!gradebook) return [];
-  if (gradebook.$?.ERRORMESSAGE) throw new Error(gradebook.$.ERRORMESSAGE);
-
-  const courses = gradebook?.COURSES?.[0]?.COURSE ?? [];
-  const assignments = [];
-
-  for (const course of courses) {
-    const courseName = course.$?.TITLE ?? "Unknown";
-    const marks = course?.MARKS?.[0]?.MARK ?? [];
-    for (const mark of marks) {
-      const rawAssignments = mark?.ASSIGNMENTS?.[0]?.ASSIGNMENT ?? [];
-      for (const a of rawAssignments) {
-        if (!a.$?.DUEDATE) continue;
-        assignments.push({
-          id: a.$.GRADEBOOKID ?? `${courseName}-${a.$.MEASURE}`,
-          name: a.$.MEASURE ?? "Untitled",
-          course: courseName,
-          type: normalizeType(a.$.TYPE ?? ""),
-          dueDate: toISO(a.$.DUEDATE),
-          assignedDate: a.$.DATE ? toISO(a.$.DATE) : toISO(a.$.DUEDATE),
-          score: a.$.SCORE ?? "",
-          pointsPossible: a.$.POINTSPOSSIBLE ?? "",
-          notes: a.$.NOTES ?? "",
-          isNotForGrading: a.$.ISNOTFORGRADING === "true",
-          childName,
-          childColor,
-        });
-      }
-    }
-  }
-  return assignments;
 }
 
 function loadCustomTasks() {
@@ -204,11 +237,9 @@ function loadHistory() {
 
 function mergeAssignments(existing, fresh) {
   const map = new Map();
-  // Load existing first, then overwrite with fresh (fresh wins on same ID)
   for (const a of existing) map.set(a.id, a);
   for (const a of fresh) map.set(a.id, a);
 
-  // Prune assignments older than 6 months
   const cutoff = new Date(Date.now() - SIX_MONTHS_MS).toISOString().slice(0, 10);
   const merged = [];
   for (const a of map.values()) {
@@ -218,37 +249,70 @@ function mergeAssignments(existing, fresh) {
   return merged;
 }
 
+// --- Main ---
+
 async function main() {
-  console.log("[fetch-data] Starting ParentVUE data fetch...");
+  console.log("[fetch-data] Starting ParentVUE data fetch (JSON API)...");
+
+  // Authenticate
+  console.log("[fetch-data] Logging in...");
+  const token = await login();
+  console.log("[fetch-data] Login successful.");
 
   const history = loadHistory();
   const children = [];
   const freshAssignments = [];
 
-  for (let i = 0; i < MAX_CHILDREN; i++) {
+  // Get child list first
+  let childList;
+  try {
+    childList = await getChildList(token);
+    console.log(`[fetch-data] Found ${childList.length} children in account.`);
+  } catch (err) {
+    console.error("[fetch-data] Failed to get child list:", err.message);
+    // Fall back to iterating by index
+    childList = null;
+  }
+
+  const childCount = childList ? Math.min(childList.length, MAX_CHILDREN) : MAX_CHILDREN;
+
+  for (let i = 0; i < childCount; i++) {
     try {
-      const infoResponse = await callParentVue("StudentInfo", i);
-      const info = await parseStudentInfo(infoResponse);
+      const childEntry = childList ? childList[i] : null;
+      const childIntID = childEntry?.childIntID ?? i;
       const color = CHILD_COLORS[i % CHILD_COLORS.length];
 
+      // Get student info — use child list data as fallback
+      let childName, childGrade;
+      try {
+        const info = await getStudentInfo(childIntID, token);
+        childName = info.name;
+        childGrade = info.grade;
+      } catch {
+        // Some schools don't support GetStudentInfoData — use child list data
+        childName = childEntry?.childName ?? childEntry?.childFirstName ?? "Student";
+        childGrade = childEntry?.grade ?? "";
+        console.log(`[fetch-data] GetStudentInfoData unavailable for child ${i}, using child list data`);
+      }
+
       children.push({
-        intID: i,
-        name: info.name,
-        grade: info.grade,
+        intID: childIntID,
+        name: childName,
+        grade: childGrade,
         color: color.bg,
         lightColor: color.light,
         textColor: color.text,
       });
 
-      const gradebookResponse = await callParentVue("Gradebook", i);
-      const assignments = await parseGradebook(gradebookResponse, info.name, color.bg);
+      // Get gradebook — concurrentSchOrgYearGU is left empty for primary school
+      const assignments = await getGradebook(childIntID, "", childName, color.bg, token);
       freshAssignments.push(...assignments);
 
-      console.log(`[fetch-data] Child ${i} (${info.name}): ${assignments.length} new assignments`);
+      console.log(`[fetch-data] Child ${i} (${childName}): ${assignments.length} new assignments`);
     } catch (err) {
       console.error(`[fetch-data] Error fetching child ${i}:`, err.message);
       if (children.length === 0 && i === 0) {
-        console.error("[fetch-data] First child fetch failed — check credentials");
+        console.error("[fetch-data] First child fetch failed — check credentials or API response");
         process.exit(1);
       }
       break;
@@ -260,7 +324,7 @@ async function main() {
 
   const allAssignments = mergeAssignments(history.assignments, freshAssignments);
 
-  // Save accumulated history to data/assignments.json
+  // Save accumulated history
   mkdirSync(join(ROOT, "data"), { recursive: true });
   const historyData = { children, assignments: allAssignments };
   writeFileSync(HISTORY_PATH, JSON.stringify(historyData, null, 2));
