@@ -3693,10 +3693,10 @@
       "type": "other",
       "dueDate": "2026-09-11",
       "assignedDate": "2026-09-11",
-      "score": "Not Graded",
+      "score": "0",
       "pointsPossible": "1",
-      "notes": "",
-      "isNotForGrading": true,
+      "notes": "Missing ",
+      "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
     },
