@@ -67,6 +67,8 @@ export default function HomePage() {
   }
 
   const allAssignments = [...serverData.assignments, ...localTasks];
+  const attendance = serverData.attendance ?? [];
+  const schedules = serverData.schedules ?? [];
 
   return (
     <main className="min-h-dvh bg-white text-gray-900 px-3 py-3 sm:px-4 sm:py-4 md:px-6 md:py-5 overflow-x-hidden">
@@ -93,6 +95,8 @@ export default function HomePage() {
         </header>
         <WeekCalendar
           assignments={allAssignments}
+          attendance={attendance}
+          schedules={schedules}
           initialDays={getWeekDays(0).map((d) => d.toISOString())}
           children={serverData.children}
           onDelete={handleDelete}

@@ -177,6 +177,99 @@ async function getGradebook(childIntID, orgYearGU, childName, childColor, token)
   return assignments;
 }
 
+async function getClassSchedule(childIntID, childName, childColor, token) {
+  const data = await callApi("StudentClassList", {
+    childIntID,
+    languageCode: "en",
+  }, token);
+
+  const classLists = data.studentClassSchedule?.termLists ?? data.termLists ?? [];
+  const schedules = [];
+
+  for (const term of classLists) {
+    const termName = term.termName ?? term.termIndex ?? "Current";
+    const classes = term.classLists ?? [];
+    const periods = [];
+
+    for (const cls of classes) {
+      periods.push({
+        period: String(cls.period ?? cls.sectionPeriod ?? ""),
+        courseTitle: cls.courseTitle ?? cls.courseName ?? "Unknown",
+        roomName: cls.roomName ?? cls.room ?? "",
+        teacher: cls.teacher ?? cls.teacherName ?? "",
+      });
+    }
+
+    if (periods.length > 0) {
+      schedules.push({
+        childName,
+        childColor,
+        termName,
+        periods,
+      });
+    }
+  }
+
+  return schedules;
+}
+
+async function getAttendance(childIntID, childName, childColor, token) {
+  const data = await callApi("GetStudentAttendanceList", {
+    childIntID,
+    languageCode: "en",
+  }, token);
+
+  const rawEvents = data.attendances ?? data.absences ?? [];
+  const events = [];
+
+  for (const evt of rawEvents) {
+    const date = evt.date ?? evt.absenceDate;
+    if (!date) continue;
+
+    const periods = evt.periodAbsences ?? evt.periods ?? [];
+    if (periods.length === 0) {
+      // Whole-day event
+      events.push({
+        date: normalizeDate(date),
+        period: "All Day",
+        status: normalizeAttendanceStatus(evt.reasonCode ?? evt.reason ?? ""),
+        reason: evt.reason ?? evt.note ?? "",
+        courseName: "",
+        childName,
+        childColor,
+      });
+    } else {
+      for (const p of periods) {
+        events.push({
+          date: normalizeDate(date),
+          period: String(p.period ?? p.number ?? ""),
+          status: normalizeAttendanceStatus(p.reasonCode ?? p.reason ?? evt.reasonCode ?? ""),
+          reason: p.reason ?? p.note ?? evt.reason ?? "",
+          courseName: p.courseName ?? p.course ?? "",
+          childName,
+          childColor,
+        });
+      }
+    }
+  }
+
+  return events;
+}
+
+function normalizeAttendanceStatus(raw) {
+  const lower = (raw || "").toLowerCase();
+  if (lower.includes("tardy") || lower.includes("late")) return "tardy";
+  if (lower.includes("excused")) return "excused";
+  if (lower.includes("unexcused")) return "unexcused";
+  if (lower.includes("absent")) return "absent";
+  // If the field is just a code like "A", "T", "E", "U"
+  if (lower === "a") return "absent";
+  if (lower === "t") return "tardy";
+  if (lower === "e") return "excused";
+  if (lower === "u") return "unexcused";
+  return "other";
+}
+
 // --- Helpers ---
 
 function normalizeDate(dateStr) {
@@ -262,6 +355,8 @@ async function main() {
   const history = loadHistory();
   const children = [];
   const freshAssignments = [];
+  const allAttendance = [];
+  const allSchedules = [];
 
   // Get child list first
   let childList;
@@ -309,6 +404,24 @@ async function main() {
       freshAssignments.push(...assignments);
 
       console.log(`[fetch-data] Child ${i} (${childName}): ${assignments.length} new assignments`);
+
+      // Fetch class schedule (non-fatal)
+      try {
+        const schedules = await getClassSchedule(childIntID, childName, color.bg, token);
+        allSchedules.push(...schedules);
+        console.log(`[fetch-data] Child ${i} (${childName}): ${schedules.length} schedule terms`);
+      } catch (err) {
+        console.warn(`[fetch-data] Could not fetch class schedule for ${childName}:`, err.message);
+      }
+
+      // Fetch attendance (non-fatal)
+      try {
+        const attendance = await getAttendance(childIntID, childName, color.bg, token);
+        allAttendance.push(...attendance);
+        console.log(`[fetch-data] Child ${i} (${childName}): ${attendance.length} attendance events`);
+      } catch (err) {
+        console.warn(`[fetch-data] Could not fetch attendance for ${childName}:`, err.message);
+      }
     } catch (err) {
       console.error(`[fetch-data] Error fetching child ${i}:`, err.message);
       if (children.length === 0 && i === 0) {
@@ -336,6 +449,8 @@ async function main() {
   const data = {
     children,
     assignments: allAssignments,
+    attendance: allAttendance,
+    schedules: allSchedules,
     lastRefreshed: new Date().toISOString(),
   };
   mkdirSync(join(ROOT, "public"), { recursive: true });

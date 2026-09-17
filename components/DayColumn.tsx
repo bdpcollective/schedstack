@@ -1,18 +1,26 @@
-import { formatDayHeader, isToday, assignmentsDueOn } from "@/lib/dates";
+import { formatDayHeader, isToday, assignmentsDueOn, attendanceOnDate, isWeekday } from "@/lib/dates";
 import AssignmentCard from "./AssignmentCard";
-import type { Assignment } from "@/lib/parentvue/types";
+import AttendanceBadge from "./AttendanceBadge";
+import SchedulePopover from "./SchedulePopover";
+import type { Assignment, AttendanceEvent, ChildSchedule } from "@/lib/parentvue/types";
 
 export default function DayColumn({
   date,
   assignments,
+  attendance,
+  schedules,
   onDelete,
 }: {
   date: Date;
   assignments: Assignment[];
+  attendance: AttendanceEvent[];
+  schedules: ChildSchedule[];
   onDelete: (id: string) => void;
 }) {
   const today = isToday(date);
   const due = assignmentsDueOn(assignments, date);
+  const dayAttendance = attendanceOnDate(attendance, date);
+  const showSchedule = isWeekday(date);
   const { dayName, dayNum } = formatDayHeader(date);
 
   return (
@@ -26,15 +34,21 @@ export default function DayColumn({
         >
           {dayName}
         </span>
-        <span
-          className={`mt-0.5 sm:mt-1 text-lg sm:text-xl w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full ${
-            today
-              ? "bg-red-500 text-white font-medium"
-              : "text-gray-700 font-light"
-          }`}
-        >
-          {dayNum}
-        </span>
+        <div className="flex items-center gap-1 mt-0.5 sm:mt-1">
+          <span
+            className={`text-lg sm:text-xl w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full ${
+              today
+                ? "bg-red-500 text-white font-medium"
+                : "text-gray-700 font-light"
+            }`}
+          >
+            {dayNum}
+          </span>
+          {showSchedule && schedules.length > 0 && (
+            <SchedulePopover schedules={schedules} />
+          )}
+        </div>
+        <AttendanceBadge events={dayAttendance} />
       </div>
 
       <div className="h-px bg-gray-200" />

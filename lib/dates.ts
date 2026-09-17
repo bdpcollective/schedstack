@@ -3,11 +3,12 @@ import {
   addWeeks,
   differenceInCalendarDays,
   format,
+  getDay,
   isSameDay,
   parseISO,
   startOfWeek,
 } from "date-fns";
-import type { Assignment } from "./parentvue/types";
+import type { Assignment, AttendanceEvent } from "./parentvue/types";
 
 export function getWeekDays(weekOffset = 0): Date[] {
   const weekStart = startOfWeek(addWeeks(new Date(), weekOffset), {
@@ -56,4 +57,16 @@ export function assignmentsDueOn(
   date: Date
 ): Assignment[] {
   return assignments.filter((a) => isSameDay(parseISO(a.dueDate), date));
+}
+
+export function attendanceOnDate(
+  events: AttendanceEvent[],
+  date: Date
+): AttendanceEvent[] {
+  return events.filter((e) => isSameDay(parseISO(e.date), date));
+}
+
+export function isWeekday(date: Date): boolean {
+  const day = getDay(date);
+  return day >= 1 && day <= 5;
 }
