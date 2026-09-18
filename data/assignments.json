@@ -5561,6 +5561,76 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2437452",
+      "name": "School Environment Quiz",
+      "course": "Spanish II (0153A)",
+      "type": "quiz",
+      "dueDate": "2026-09-18",
+      "assignedDate": "2026-09-18",
+      "score": "Not Due",
+      "pointsPossible": "6",
+      "notes": "",
+      "isNotForGrading": true,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2436900",
+      "name": "QUIZ Unit 2 Analyze &amp; Explore Polynomial Functions",
+      "course": "Algebra 3 (MA30)",
+      "type": "quiz",
+      "dueDate": "2026-09-22",
+      "assignedDate": "2026-09-22",
+      "score": "Not Due",
+      "pointsPossible": "50",
+      "notes": "",
+      "isNotForGrading": true,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2436885",
+      "name": "Exit Ticket Graphs of Cubic Functions",
+      "course": "Algebra 3 (MA30)",
+      "type": "homework",
+      "dueDate": "2026-09-18",
+      "assignedDate": "2026-09-18",
+      "score": "Not Due",
+      "pointsPossible": "10",
+      "notes": "",
+      "isNotForGrading": true,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2437175",
+      "name": "Forms of Government Quiz",
+      "course": "World Studies 7 (4700)",
+      "type": "quiz",
+      "dueDate": "2026-09-17",
+      "assignedDate": "2026-09-17",
+      "score": "14",
+      "pointsPossible": "15",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Holden D. Pope",
+      "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2437138",
+      "name": "Government Writing Activity  (Similarities/Differences)",
+      "course": "World Studies 7 (4700)",
+      "type": "other",
+      "dueDate": "2026-09-17",
+      "assignedDate": "2026-09-16",
+      "score": "5",
+      "pointsPossible": "5",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Holden D. Pope",
+      "childColor": "bg-emerald-500"
     }
   ]
 }
