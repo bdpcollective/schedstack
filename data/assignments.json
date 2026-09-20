@@ -5435,6 +5435,34 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2439268",
+      "name": "1 CW/HW Blue Unit 1 Review Packet",
+      "course": "Chemistry (0334A)",
+      "type": "homework",
+      "dueDate": "2026-09-18",
+      "assignedDate": "2026-09-16",
+      "score": "8",
+      "pointsPossible": "8",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2439278",
+      "name": "1 Lab Flame Test",
+      "course": "Chemistry (0334A)",
+      "type": "quiz",
+      "dueDate": "2026-09-11",
+      "assignedDate": "2026-09-09",
+      "score": "10",
+      "pointsPossible": "10",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
