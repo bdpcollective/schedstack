@@ -61,34 +61,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2291731",
-      "name": "Sales Tax HW",
-      "course": "Prealgebra 6 (MA626)",
-      "type": "homework",
-      "dueDate": "2026-03-24",
-      "assignedDate": "2026-03-24",
-      "score": "2",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
-      "id": "2291983",
-      "name": "Solution Research Slides",
-      "course": "Science 6 (3600)",
-      "type": "homework",
-      "dueDate": "2026-03-24",
-      "assignedDate": "2026-03-23",
-      "score": "6",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
       "id": "2292779",
       "name": "vocab participation",
       "course": "Spanish A (1618)",
@@ -129,20 +101,6 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2295041",
-      "name": "Geography of Greece Poster",
-      "course": "Ancient Civilizations 6 (4600)",
-      "type": "homework",
-      "dueDate": "2026-03-24",
-      "assignedDate": "2026-03-23",
-      "score": "10",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
     },
     {
       "id": "2295495",
@@ -3413,10 +3371,10 @@
       "type": "other",
       "dueDate": "2026-09-18",
       "assignedDate": "2026-09-16",
-      "score": "Not Graded",
+      "score": "5",
       "pointsPossible": "5",
       "notes": "",
-      "isNotForGrading": true,
+      "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
     },
@@ -3469,10 +3427,10 @@
       "type": "other",
       "dueDate": "2026-09-11",
       "assignedDate": "2026-09-11",
-      "score": "Not Graded",
+      "score": "7.5",
       "pointsPossible": "10",
       "notes": "",
-      "isNotForGrading": true,
+      "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
     },
@@ -3483,10 +3441,10 @@
       "type": "other",
       "dueDate": "2026-09-11",
       "assignedDate": "2026-09-11",
-      "score": "Not Graded",
+      "score": "24",
       "pointsPossible": "24",
       "notes": "",
-      "isNotForGrading": true,
+      "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
     },
@@ -5463,6 +5421,48 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2440357",
+      "name": "Pride Pts. 9.21-9.25",
+      "course": "Intro to Carpentry (0654)",
+      "type": "other",
+      "dueDate": "2026-09-25",
+      "assignedDate": "2026-09-21",
+      "score": "10",
+      "pointsPossible": "10",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2440842",
+      "name": "Shake It Up Lab Worksheet",
+      "course": "Science 7 (3700)",
+      "type": "other",
+      "dueDate": "2026-09-25",
+      "assignedDate": "2026-09-24",
+      "score": "19",
+      "pointsPossible": "20",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Holden D. Pope",
+      "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2440605",
+      "name": "PM Vocabulary Quest Activity",
+      "course": "Science 7 (3700)",
+      "type": "homework",
+      "dueDate": "2026-09-18",
+      "assignedDate": "2026-09-07",
+      "score": "25",
+      "pointsPossible": "25",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Holden D. Pope",
+      "childColor": "bg-emerald-500"
     }
   ]
 }
