@@ -5149,10 +5149,10 @@
       "type": "quiz",
       "dueDate": "2026-09-22",
       "assignedDate": "2026-09-22",
-      "score": "Not Graded",
+      "score": "48.5",
       "pointsPossible": "50",
       "notes": "",
-      "isNotForGrading": true,
+      "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
     },
@@ -5415,10 +5415,10 @@
       "type": "homework",
       "dueDate": "2026-09-24",
       "assignedDate": "2026-09-21",
-      "score": "Not Due",
+      "score": "100",
       "pointsPossible": "10",
       "notes": "",
-      "isNotForGrading": true,
+      "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
     },
@@ -5631,6 +5631,62 @@
       "isNotForGrading": true,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2447913",
+      "name": "Prefix Fill in the Blank",
+      "course": "Honors English 10 (0004A)",
+      "type": "homework",
+      "dueDate": "2026-09-21",
+      "assignedDate": "2026-09-18",
+      "score": "10",
+      "pointsPossible": "10",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2447893",
+      "name": "Prefix Break Apart",
+      "course": "Honors English 10 (0004A)",
+      "type": "homework",
+      "dueDate": "2026-09-18",
+      "assignedDate": "2026-09-18",
+      "score": "7",
+      "pointsPossible": "8",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2447909",
+      "name": "Prefix Sentences",
+      "course": "Honors English 10 (0004A)",
+      "type": "homework",
+      "dueDate": "2026-09-16",
+      "assignedDate": "2026-09-16",
+      "score": "10",
+      "pointsPossible": "10",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2448740",
+      "name": "Unit 2 Test- The Roman Empire",
+      "course": "World History (0420A)",
+      "type": "test",
+      "dueDate": "2026-09-24",
+      "assignedDate": "2026-09-24",
+      "score": "38",
+      "pointsPossible": "40",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
