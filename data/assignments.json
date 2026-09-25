@@ -145,20 +145,6 @@
       "childColor": "bg-emerald-500"
     },
     {
-      "id": "2303728",
-      "name": "IXL",
-      "course": "English Language Arts 6 (0600)",
-      "type": "homework",
-      "dueDate": "2026-03-28",
-      "assignedDate": "2026-03-21",
-      "score": "",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
       "id": "2304974",
       "name": "Graphing Quadratics Quiz",
       "course": "Algebra 2 (MA18)",
@@ -185,20 +171,6 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2304589",
-      "name": "IXL",
-      "course": "English Language Arts 6 (0600)",
-      "type": "homework",
-      "dueDate": "2026-03-28",
-      "assignedDate": "2026-03-23",
-      "score": "10",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
     },
     {
       "id": "2305461",
@@ -5685,6 +5657,48 @@
       "pointsPossible": "40",
       "notes": "",
       "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2449662",
+      "name": "Las escuelas de Ecuador",
+      "course": "Spanish II (0153A)",
+      "type": "other",
+      "dueDate": "2026-09-25",
+      "assignedDate": "2026-09-23",
+      "score": "Not Due",
+      "pointsPossible": "4",
+      "notes": "",
+      "isNotForGrading": true,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2449669",
+      "name": "School Professions Quiz ",
+      "course": "Spanish II (0153A)",
+      "type": "quiz",
+      "dueDate": "2026-09-25",
+      "assignedDate": "2026-09-25",
+      "score": "6",
+      "pointsPossible": "6",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2450233",
+      "name": "Legacy of Rome DBQ",
+      "course": "World History (0420A)",
+      "type": "other",
+      "dueDate": "2026-09-24",
+      "assignedDate": "2026-09-22",
+      "score": "Not Graded",
+      "pointsPossible": "20",
+      "notes": "",
+      "isNotForGrading": true,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
     }
