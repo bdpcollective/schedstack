@@ -61,34 +61,6 @@
       "childColor": "bg-emerald-500"
     },
     {
-      "id": "2300444",
-      "name": "Vertical Motion and Review WS",
-      "course": "Algebra 2 (MA18)",
-      "type": "homework",
-      "dueDate": "2026-03-31",
-      "assignedDate": "2026-03-26",
-      "score": "2",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2300044",
-      "name": "3/31/26",
-      "course": "Physical Education 6 (8600)",
-      "type": "other",
-      "dueDate": "2026-03-31",
-      "assignedDate": "2026-03-31",
-      "score": "10",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
       "id": "2303181",
       "name": "District Reading Assessment - ACT Style",
       "course": "Honors English 9 (0003B)",
@@ -115,20 +87,6 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
-    },
-    {
-      "id": "2304974",
-      "name": "Graphing Quadratics Quiz",
-      "course": "Algebra 2 (MA18)",
-      "type": "quiz",
-      "dueDate": "2026-03-31",
-      "assignedDate": "2026-03-30",
-      "score": "27",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
     },
     {
       "id": "2304494",
@@ -446,20 +404,6 @@
       "dueDate": "2026-04-01",
       "assignedDate": "2026-04-01",
       "score": "10",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
-      "id": "2312285",
-      "name": "Character Mashup Animation in Procreate",
-      "course": "Art & Science of Animation 6 (ST63)",
-      "type": "project",
-      "dueDate": "2026-03-31",
-      "assignedDate": "2026-03-30",
-      "score": "100",
       "pointsPossible": "",
       "notes": "",
       "isNotForGrading": false,
@@ -5233,10 +5177,10 @@
       "type": "quiz",
       "dueDate": "2026-09-18",
       "assignedDate": "2026-09-18",
-      "score": "Not Graded",
+      "score": "15",
       "pointsPossible": "20",
       "notes": "",
-      "isNotForGrading": true,
+      "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
     },
@@ -5659,6 +5603,48 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2453295",
+      "name": "Pride Pts. 9/28-10/02",
+      "course": "Intro to Carpentry (0654)",
+      "type": "other",
+      "dueDate": "2026-10-02",
+      "assignedDate": "2026-09-28",
+      "score": "10",
+      "pointsPossible": "10",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2453694",
+      "name": "Time Telling Test (1)",
+      "course": "Spanish B (1718)",
+      "type": "test",
+      "dueDate": "2026-09-23",
+      "assignedDate": "2026-09-23",
+      "score": "24",
+      "pointsPossible": "25",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Holden D. Pope",
+      "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2453687",
+      "name": "Page 9 Time Telling Packet",
+      "course": "Spanish B (1718)",
+      "type": "homework",
+      "dueDate": "2026-09-23",
+      "assignedDate": "2026-09-22",
+      "score": "10",
+      "pointsPossible": "10",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Holden D. Pope",
+      "childColor": "bg-emerald-500"
     }
   ]
 }
