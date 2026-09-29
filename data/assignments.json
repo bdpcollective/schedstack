@@ -5491,6 +5491,20 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
+    },
+    {
+      "id": "2457047",
+      "name": "2 CW/HW Organization of the Periodic Table Packet",
+      "course": "Chemistry (0334A)",
+      "type": "homework",
+      "dueDate": "2026-09-29",
+      "assignedDate": "2026-09-29",
+      "score": "10",
+      "pointsPossible": "10",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
