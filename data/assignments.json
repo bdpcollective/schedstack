@@ -5617,6 +5617,62 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2463701",
+      "name": "10.2 - Logo Design",
+      "course": "Business Technologies (0566)",
+      "type": "other",
+      "dueDate": "2026-10-02",
+      "assignedDate": "2026-10-02",
+      "score": "Not Due",
+      "pointsPossible": "28",
+      "notes": "",
+      "isNotForGrading": true,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2463703",
+      "name": "10.1 - Elevator Pitch",
+      "course": "Business Technologies (0566)",
+      "type": "other",
+      "dueDate": "2026-10-01",
+      "assignedDate": "2026-10-01",
+      "score": "Not Graded",
+      "pointsPossible": "24",
+      "notes": "",
+      "isNotForGrading": true,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2463702",
+      "name": "10.1 - Practice Logo",
+      "course": "Business Technologies (0566)",
+      "type": "other",
+      "dueDate": "2026-10-01",
+      "assignedDate": "2026-10-01",
+      "score": "Not Graded",
+      "pointsPossible": "2",
+      "notes": "",
+      "isNotForGrading": true,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2463704",
+      "name": "9.29 - MS Word Scavenger Hunt",
+      "course": "Business Technologies (0566)",
+      "type": "other",
+      "dueDate": "2026-09-29",
+      "assignedDate": "2026-09-29",
+      "score": "Not Graded",
+      "pointsPossible": "5",
+      "notes": "",
+      "isNotForGrading": true,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
