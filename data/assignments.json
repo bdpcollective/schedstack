@@ -5575,6 +5575,48 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2462372",
+      "name": "2 CW/HW p9 and 12 in packet",
+      "course": "Chemistry (0334A)",
+      "type": "homework",
+      "dueDate": "2026-10-02",
+      "assignedDate": "2026-09-30",
+      "score": "4",
+      "pointsPossible": "8",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2463246",
+      "name": "Exit Ticket Characteristics of Polynomial Functions",
+      "course": "Algebra 3 (MA30)",
+      "type": "homework",
+      "dueDate": "2026-10-01",
+      "assignedDate": "2026-10-01",
+      "score": "8",
+      "pointsPossible": "14",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
+    },
+    {
+      "id": "2463241",
+      "name": "WS Day 4 Even&amp;Odd Functions and Write Polynomial Equations (completion)",
+      "course": "Algebra 3 (MA30)",
+      "type": "homework",
+      "dueDate": "2026-10-01",
+      "assignedDate": "2026-09-29",
+      "score": "2",
+      "pointsPossible": "2",
+      "notes": "",
+      "isNotForGrading": false,
+      "childName": "Easton M. Pope",
+      "childColor": "bg-blue-500"
     }
   ]
 }
