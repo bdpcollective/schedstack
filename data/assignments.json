@@ -5443,10 +5443,10 @@
       "type": "homework",
       "dueDate": "2026-10-06",
       "assignedDate": "2026-10-02",
-      "score": "Not Due",
+      "score": "10",
       "pointsPossible": "10",
       "notes": "",
-      "isNotForGrading": true,
+      "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
     },
