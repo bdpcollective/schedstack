@@ -5457,7 +5457,7 @@
       "type": "test",
       "dueDate": "2026-10-06",
       "assignedDate": "2026-10-06",
-      "score": "Not Due",
+      "score": "Not Graded",
       "pointsPossible": "100",
       "notes": "",
       "isNotForGrading": true,
@@ -5723,10 +5723,10 @@
       "type": "other",
       "dueDate": "2026-10-02",
       "assignedDate": "2026-09-29",
-      "score": "Not Graded",
+      "score": "20",
       "pointsPossible": "20",
       "notes": "",
-      "isNotForGrading": true,
+      "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
     }
