@@ -131,20 +131,6 @@
       "childColor": "bg-emerald-500"
     },
     {
-      "id": "2312369",
-      "name": "IXL",
-      "course": "English Language Arts 6 (0600)",
-      "type": "homework",
-      "dueDate": "2026-04-12",
-      "assignedDate": "2026-03-30",
-      "score": "9.6",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
       "id": "2312902",
       "name": "Graphing Quadratics Monster Mash Up Review WS",
       "course": "Algebra 2 (MA18)",
@@ -5765,7 +5751,7 @@
       "type": "other",
       "dueDate": "2026-10-09",
       "assignedDate": "2026-10-09",
-      "score": "Not Due",
+      "score": "Not Graded",
       "pointsPossible": "20",
       "notes": "",
       "isNotForGrading": true,
