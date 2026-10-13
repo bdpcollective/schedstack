@@ -159,20 +159,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2312603",
-      "name": "4/15/26",
-      "course": "Physical Education 6 (8600)",
-      "type": "other",
-      "dueDate": "2026-04-15",
-      "assignedDate": "2026-04-15",
-      "score": "10",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
       "id": "2315457",
       "name": "Graphing Quadratics Unit Review WS",
       "course": "Algebra 2 (MA18)",
