@@ -5667,10 +5667,10 @@
       "type": "quiz",
       "dueDate": "2026-10-13",
       "assignedDate": "2026-10-13",
-      "score": "Not Graded",
+      "score": "24",
       "pointsPossible": "50",
       "notes": "",
-      "isNotForGrading": true,
+      "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
     },
