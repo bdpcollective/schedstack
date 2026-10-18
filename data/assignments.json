@@ -117,20 +117,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2316691",
-      "name": "Email Draft in Spanish",
-      "course": "Spanish A (1618)",
-      "type": "homework",
-      "dueDate": "2026-04-20",
-      "assignedDate": "2026-04-17",
-      "score": "10",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
       "id": "2321045",
       "name": "Kite Runner Cornell Notes (week 2)",
       "course": "Honors English 9 (0003B)",
