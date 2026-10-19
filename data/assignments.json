@@ -131,34 +131,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2322801",
-      "name": "Simplifying Square Roots WS",
-      "course": "Algebra 2 (MA18)",
-      "type": "homework",
-      "dueDate": "2026-04-21",
-      "assignedDate": "2026-04-17",
-      "score": "2",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2322373",
-      "name": "Unit 6 Exam Photosynthesis &amp; Respiration",
-      "course": "Biology (0327B)",
-      "type": "test",
-      "dueDate": "2026-04-21",
-      "assignedDate": "2026-04-21",
-      "score": "27",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
       "id": "2322969",
       "name": "WP Vocabulary",
       "course": "Science 6 (3600)",
