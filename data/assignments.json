@@ -131,20 +131,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2336894",
-      "name": "4/30/26",
-      "course": "Physical Education 6 (8600)",
-      "type": "other",
-      "dueDate": "2026-04-30",
-      "assignedDate": "2026-04-30",
-      "score": "",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
       "id": "2339676",
       "name": "AP central EC",
       "course": "AP Human Geography (0456B)",
@@ -187,20 +173,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2340811",
-      "name": "Solving quadratics by completing the square WS",
-      "course": "Algebra 2 (MA18)",
-      "type": "homework",
-      "dueDate": "2026-04-30",
-      "assignedDate": "2026-04-27",
-      "score": "2",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
       "id": "2341751",
       "name": "Textbook work",
       "course": "Spanish A (1618)",
@@ -227,20 +199,6 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
-    },
-    {
-      "id": "2344048",
-      "name": "Quadratic Formula Delta Math",
-      "course": "Algebra 2 (MA18)",
-      "type": "homework",
-      "dueDate": "2026-04-30",
-      "assignedDate": "2026-04-27",
-      "score": "2",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
     },
     {
       "id": "2344906",
