@@ -117,20 +117,6 @@
       "childColor": "bg-emerald-500"
     },
     {
-      "id": "2340822",
-      "name": "5/4/26",
-      "course": "Physical Education 6 (8600)",
-      "type": "other",
-      "dueDate": "2026-05-04",
-      "assignedDate": "2026-05-04",
-      "score": "10",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
       "id": "2344906",
       "name": "Unit 7 Exam Ecology",
       "course": "Biology (0327B)",
@@ -325,34 +311,6 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2350982",
-      "name": "Tuck ch 1-6 quiz",
-      "course": "English Language Arts 6 (0600)",
-      "type": "quiz",
-      "dueDate": "2026-05-04",
-      "assignedDate": "2026-05-04",
-      "score": "24",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
-      "id": "2350934",
-      "name": "Tuck work ch 1-6",
-      "course": "English Language Arts 6 (0600)",
-      "type": "other",
-      "dueDate": "2026-05-04",
-      "assignedDate": "2026-04-27",
-      "score": "24",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
     },
     {
       "id": "2351579",
