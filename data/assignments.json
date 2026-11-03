@@ -103,20 +103,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2341751",
-      "name": "Textbook work",
-      "course": "Spanish A (1618)",
-      "type": "homework",
-      "dueDate": "2026-05-06",
-      "assignedDate": "2026-05-04",
-      "score": "10",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
       "id": "2345722",
       "name": "Solving Quadratics Unit Review WS",
       "course": "Algebra 2 (MA18)",
@@ -140,20 +126,6 @@
       "score": "0",
       "pointsPossible": "",
       "notes": "Past Due ",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2345779",
-      "name": "Kite Runner 13-19 Quiz Review",
-      "course": "Honors English 9 (0003B)",
-      "type": "other",
-      "dueDate": "2026-05-06",
-      "assignedDate": "2026-05-04",
-      "score": "15",
-      "pointsPossible": "",
-      "notes": "",
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
@@ -390,20 +362,6 @@
       "dueDate": "2026-05-08",
       "assignedDate": "2026-05-06",
       "score": "11",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2353113",
-      "name": "The Kite Runner 13-19 Quiz - Open Note",
-      "course": "Honors English 9 (0003B)",
-      "type": "other",
-      "dueDate": "2026-05-06",
-      "assignedDate": "2026-05-06",
-      "score": "16",
       "pointsPossible": "",
       "notes": "",
       "isNotForGrading": false,
