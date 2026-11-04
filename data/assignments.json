@@ -103,20 +103,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2345722",
-      "name": "Solving Quadratics Unit Review WS",
-      "course": "Algebra 2 (MA18)",
-      "type": "homework",
-      "dueDate": "2026-05-07",
-      "assignedDate": "2026-05-04",
-      "score": "0",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
       "id": "2345780",
       "name": "Week 4 Cornell Notes",
       "course": "Honors English 9 (0003B)",
@@ -173,48 +159,6 @@
       "childColor": "bg-emerald-500"
     },
     {
-      "id": "2347503",
-      "name": "5/7/26",
-      "course": "Physical Education 6 (8600)",
-      "type": "other",
-      "dueDate": "2026-05-07",
-      "assignedDate": "2026-05-07",
-      "score": "10",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
-      "id": "2347823",
-      "name": "Key Concepts (WP)",
-      "course": "Science 6 (3600)",
-      "type": "homework",
-      "dueDate": "2026-05-07",
-      "assignedDate": "2026-05-06",
-      "score": "14",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
-      "id": "2347841",
-      "name": "WP Critical Juncture Test",
-      "course": "Science 6 (3600)",
-      "type": "homework",
-      "dueDate": "2026-05-07",
-      "assignedDate": "2026-05-07",
-      "score": "3",
-      "pointsPossible": "",
-      "notes": "(Not For Grading) ",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
       "id": "2350655",
       "name": "EdPuzzle: ¿Cuánto cuesta? ",
       "course": "Spanish I (0152B)",
@@ -255,20 +199,6 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
-    },
-    {
-      "id": "2351615",
-      "name": "Solving Quadratics Test",
-      "course": "Algebra 2 (MA18)",
-      "type": "test",
-      "dueDate": "2026-05-07",
-      "assignedDate": "2026-05-06",
-      "score": "43",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
     },
     {
       "id": "2353284",
@@ -4869,10 +4799,10 @@
       "type": "homework",
       "dueDate": "2026-10-09",
       "assignedDate": "2026-10-09",
-      "score": "Not Graded",
+      "score": "0",
       "pointsPossible": "16",
       "notes": "",
-      "isNotForGrading": true,
+      "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
     }
