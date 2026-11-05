@@ -103,34 +103,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2345780",
-      "name": "Week 4 Cornell Notes",
-      "course": "Honors English 9 (0003B)",
-      "type": "other",
-      "dueDate": "2026-05-08",
-      "assignedDate": "2026-05-04",
-      "score": "0",
-      "pointsPossible": "",
-      "notes": "Past Due ",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2342922",
-      "name": "Analogies practice",
-      "course": "English Language Arts 6 (0600)",
-      "type": "other",
-      "dueDate": "2026-05-08",
-      "assignedDate": "2026-04-27",
-      "score": "5",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
       "id": "2340182",
       "name": "Final Orchestra Project",
       "course": "Orchestra 6 (7620)",
@@ -157,20 +129,6 @@
       "isNotForGrading": false,
       "childName": "Holden D. Pope",
       "childColor": "bg-emerald-500"
-    },
-    {
-      "id": "2350655",
-      "name": "EdPuzzle: ¿Cuánto cuesta? ",
-      "course": "Spanish I (0152B)",
-      "type": "homework",
-      "dueDate": "2026-05-08",
-      "assignedDate": "2026-05-07",
-      "score": "4",
-      "pointsPossible": "",
-      "notes": "+4 Cinco de mayo video",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
     },
     {
       "id": "2351579",
@@ -285,20 +243,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2353259",
-      "name": "\"The Keys to Happiness\" annotions + questions",
-      "course": "Honors English 9 (0003B)",
-      "type": "other",
-      "dueDate": "2026-05-08",
-      "assignedDate": "2026-05-06",
-      "score": "11",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
       "id": "2351635",
       "name": "5/11/26",
       "course": "Physical Education 6 (8600)",
@@ -319,20 +263,6 @@
       "type": "homework",
       "dueDate": "2026-05-12",
       "assignedDate": "2026-05-08",
-      "score": "2",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2353745",
-      "name": "Square Root Graphing WS",
-      "course": "Algebra 2 (MA18)",
-      "type": "homework",
-      "dueDate": "2026-05-08",
-      "assignedDate": "2026-05-06",
       "score": "2",
       "pointsPossible": "",
       "notes": "",
@@ -627,20 +557,6 @@
       "type": "other",
       "dueDate": "2026-05-12",
       "assignedDate": "2026-05-11",
-      "score": "30",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2362648",
-      "name": "Week 17",
-      "course": "Sport Officiating (0817)",
-      "type": "other",
-      "dueDate": "2026-05-08",
-      "assignedDate": "2026-05-04",
       "score": "30",
       "pointsPossible": "",
       "notes": "",
