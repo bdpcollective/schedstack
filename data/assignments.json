@@ -187,48 +187,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2352986",
-      "name": "The Kite Runner 20-22 Quiz Review",
-      "course": "Honors English 9 (0003B)",
-      "type": "other",
-      "dueDate": "2026-05-11",
-      "assignedDate": "2026-05-08",
-      "score": "9",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2353231",
-      "name": "The Kite Runner 20-22 Quiz",
-      "course": "Honors English 9 (0003B)",
-      "type": "other",
-      "dueDate": "2026-05-11",
-      "assignedDate": "2026-05-11",
-      "score": "8",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2351635",
-      "name": "5/11/26",
-      "course": "Physical Education 6 (8600)",
-      "type": "other",
-      "dueDate": "2026-05-11",
-      "assignedDate": "2026-05-11",
-      "score": "10",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
       "id": "2353749",
       "name": "Evaluating nth roots WS",
       "course": "Algebra 2 (MA18)",
