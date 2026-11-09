@@ -187,20 +187,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2353749",
-      "name": "Evaluating nth roots WS",
-      "course": "Algebra 2 (MA18)",
-      "type": "homework",
-      "dueDate": "2026-05-12",
-      "assignedDate": "2026-05-08",
-      "score": "2",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
       "id": "2356779",
       "name": "ONLINE PRACTICE, Unit 4",
       "course": "Spanish I (0152B)",
@@ -472,20 +458,6 @@
       "course": "Sport Officiating (0817)",
       "type": "other",
       "dueDate": "2026-05-15",
-      "assignedDate": "2026-05-11",
-      "score": "30",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2362934",
-      "name": "Baseball/Softball Evaluation",
-      "course": "Sport Officiating (0817)",
-      "type": "other",
-      "dueDate": "2026-05-12",
       "assignedDate": "2026-05-11",
       "score": "30",
       "pointsPossible": "",
