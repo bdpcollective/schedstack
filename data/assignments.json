@@ -89,20 +89,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2312788",
-      "name": "Baseball/SoftballTest",
-      "course": "Sport Officiating (0817)",
-      "type": "other",
-      "dueDate": "2026-05-14",
-      "assignedDate": "2026-05-13",
-      "score": "70",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
       "id": "2340182",
       "name": "Final Orchestra Project",
       "course": "Orchestra 6 (7620)",
@@ -110,20 +96,6 @@
       "dueDate": "2026-05-21",
       "assignedDate": "2026-04-13",
       "score": "100",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
-    },
-    {
-      "id": "2348364",
-      "name": "Vlog DCA",
-      "course": "Spanish A (1618)",
-      "type": "homework",
-      "dueDate": "2026-05-14",
-      "assignedDate": "2026-05-07",
-      "score": "9",
       "pointsPossible": "",
       "notes": "",
       "isNotForGrading": false,
@@ -173,20 +145,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2356779",
-      "name": "ONLINE PRACTICE, Unit 4",
-      "course": "Spanish I (0152B)",
-      "type": "homework",
-      "dueDate": "2026-05-14",
-      "assignedDate": "2026-05-12",
-      "score": "15",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
       "id": "2358358",
       "name": "Final Project ",
       "course": "AP Human Geography (0456B)",
@@ -213,20 +171,6 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2359573",
-      "name": "Linear Functions Study Guide ",
-      "course": "Prealgebra 6 (MA626)",
-      "type": "other",
-      "dueDate": "2026-05-14",
-      "assignedDate": "2026-05-14",
-      "score": "2",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
     },
     {
       "id": "2359938",
