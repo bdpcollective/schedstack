@@ -145,20 +145,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2358272",
-      "name": "EC choice board 2",
-      "course": "AP Human Geography (0456B)",
-      "type": "quiz",
-      "dueDate": "2026-05-18",
-      "assignedDate": "2026-04-13",
-      "score": "0",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
       "id": "2361425",
       "name": "PF Debate",
       "course": "Debate (0022)",
@@ -227,34 +213,6 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2363429",
-      "name": "Chapter 25 Pop Quiz - open note",
-      "course": "Honors English 9 (0003B)",
-      "type": "other",
-      "dueDate": "2026-05-18",
-      "assignedDate": "2026-05-18",
-      "score": "8",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2364029",
-      "name": "Tuck work ch 7-14",
-      "course": "English Language Arts 6 (0600)",
-      "type": "quiz",
-      "dueDate": "2026-05-18",
-      "assignedDate": "2026-05-18",
-      "score": "10",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
     },
     {
       "id": "2363858",
@@ -409,20 +367,6 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2368562",
-      "name": "Service Learning ",
-      "course": "Ancient Civilizations 6 (4600)",
-      "type": "other",
-      "dueDate": "2026-05-18",
-      "assignedDate": "2026-05-18",
-      "score": "12",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
     },
     {
       "id": "2368892",
