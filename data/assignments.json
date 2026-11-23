@@ -33,34 +33,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2370759",
-      "name": "Radical Expressions and Equations Review",
-      "course": "Algebra 2 (MA18)",
-      "type": "homework",
-      "dueDate": "2026-05-26",
-      "assignedDate": "2026-05-20",
-      "score": "2",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2370858",
-      "name": "Radicals Unit Test 2 ",
-      "course": "Algebra 2 (MA18)",
-      "type": "test",
-      "dueDate": "2026-05-26",
-      "assignedDate": "2026-05-22",
-      "score": "27",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
       "id": "2370906",
       "name": "Final Book Review",
       "course": "Honors English 9 (0003B)",
@@ -73,34 +45,6 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2373532",
-      "name": "Socratic Seminar",
-      "course": "Debate (0022)",
-      "type": "other",
-      "dueDate": "2026-05-26",
-      "assignedDate": "2026-05-22",
-      "score": "23",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2372472",
-      "name": "5/26/26",
-      "course": "Physical Education 6 (8600)",
-      "type": "other",
-      "dueDate": "2026-05-26",
-      "assignedDate": "2026-05-26",
-      "score": "10",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
     },
     {
       "id": "2373966",
