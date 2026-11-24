@@ -33,20 +33,6 @@
       "childColor": "bg-blue-500"
     },
     {
-      "id": "2370906",
-      "name": "Final Book Review",
-      "course": "Honors English 9 (0003B)",
-      "type": "other",
-      "dueDate": "2026-05-27",
-      "assignedDate": "2026-05-27",
-      "score": "25",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Easton M. Pope",
-      "childColor": "bg-blue-500"
-    },
-    {
       "id": "2373966",
       "name": "Radicals DCA",
       "course": "Algebra 2 (MA18)",
@@ -73,20 +59,6 @@
       "isNotForGrading": false,
       "childName": "Easton M. Pope",
       "childColor": "bg-blue-500"
-    },
-    {
-      "id": "2374696",
-      "name": "Fossil Poster: Final Project",
-      "course": "Science 6 (3600)",
-      "type": "project",
-      "dueDate": "2026-05-27",
-      "assignedDate": "2026-05-21",
-      "score": "8",
-      "pointsPossible": "",
-      "notes": "",
-      "isNotForGrading": false,
-      "childName": "Holden D. Pope",
-      "childColor": "bg-emerald-500"
     },
     {
       "id": "2370275",
